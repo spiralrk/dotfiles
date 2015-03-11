@@ -98,6 +98,8 @@ alias bu='python /home/bin/backup.py'
 alias raspi='ssh 192.168.11.11 -l pi -p 55522'
 alias hamachi='ssh 25.68.146.177 -l pi -p 55522'
 alias tmux='tmux -2'
+alias open='xdg-open'
+export PATH=$PATH:/sbin
 ###########################################
 
 # Alias definitions.
