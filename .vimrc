@@ -6,8 +6,8 @@ syntax on "コードの色分け
 set tabstop=4 "インデントをスペース4つ分に設定
 set smartindent "オートインデント
 colorscheme flatland    
-"colorscheme molokai
 set t_Co=256
+set clipboard=unnamedplus
 
 "カーソルライン
 hi LineNr ctermbg=none
