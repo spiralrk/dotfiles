@@ -99,6 +99,9 @@ alias raspi='ssh 192.168.11.11 -l pi -p 55522'
 alias hamachi='ssh 25.68.146.177 -l pi -p 55522'
 alias tmux='tmux -2'
 alias open='xdg-open'
+alias crontab='crontab -i'
+alias rm='rm -i'
+alias cp='cp -i'
 export PATH=$PATH:/sbin
 ###########################################
 
