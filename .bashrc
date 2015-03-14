@@ -102,6 +102,7 @@ alias open='xdg-open'
 alias crontab='crontab -i'
 alias rm='rm -i'
 alias cp='cp -i'
+alias sudo='sudo -E '
 export PATH=$PATH:/sbin
 ###########################################
 
