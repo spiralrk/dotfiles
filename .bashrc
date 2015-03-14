@@ -90,9 +90,9 @@ fi
 #alias l='ls -CF'
 
 ###########################################
-alias PROG='/mnt/prog/'
-alias PYTHON='/mnt/prog/Python/'
-alias TEX='/mnt/prog/Tex/'
+alias PROG=/mnt/prog/
+alias PY=/mnt/prog/Python/
+alias TEX=/mnt/prog/Tex/
 alias lmk='latexmk'
 #alias bu='python /home/bin/backup.py'
 alias raspi='ssh 192.168.11.11 -l pi -p 55522'
