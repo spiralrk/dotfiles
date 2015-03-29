@@ -104,7 +104,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias sudo='sudo -E '
 alias dropbox='/home/ryosuke/bin/Dropbox-Uploader/dropbox_uploader.sh'
-export PATH=$PATH:/sbin
+export PATH=$PATH:/sbin:/home/ryosuke/bin
 ###########################################
 
 # Alias definitions.
