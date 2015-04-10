@@ -1,0 +1,88 @@
+alignment top_right
+background yes
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+double_buffer yes
+draw_borders yes
+draw_graph_borders no
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont TakaoGothic:style=Regular:size=10
+gap_x 10
+gap_y 35
+minimum_size 5 5
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+own_window_type override
+own_window_colour 555555
+own_window_transparent no
+own_window_hint sticky
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+TEXT
+${color lightgreen}Kernel: $color$kernel
+${color lightgreen}Uptime: $color$uptime
+
+${color lightgreen}-- CPU --
+${color lightgreen} CPU Freq: $color${freq}MHz
+${color lightgreen} Core 1  : $color${cpu cpu1}%
+${color lightgreen} Core 2  : $color${cpu cpu2}%
+
+${color lightgreen}-- RAM --
+${color lightgreen}Ram_max   : $color$memmax
+${color lightgreen}Ram_use   : $color$mem
+${color lightgreen}Ram_free  : $color$memeasyfree
+
+${color lightgreen}Swap_max  : $color$swapmax
+${color lightgreen}Swap_use  : $color$swap
+${color lightgreen}Swap_free : $color$swapfree
+
+${color lightgreen}-- Processes --
+${color lightgreen} Total   : $color$processes
+${color lightgreen} Run     : $color$running_processes
+${color lightgreen} Threads : $color$running_threads
+
+${color lightgreen}-- Filesystems --
+${color lightgreen} /     $color${fs_used /}/${fs_size /}
+${color lightgreen} /home $color${fs_used /home}/${fs_size /home}
+
+${color lightgreen}-- Disk Read/Write --
+${color lightgreen} Read  : $color${diskio_read /dev/sda}
+${color lightgreen} Write : $color${diskio_write /dev/sda}
+
+${color lightgreen}-- Networking --
+${color lightgreen} eh0
+${color lightgreen}  Up   : $color${upspeed eth0}
+${color lightgreen}  Down : $color${downspeed eth0}
+
+${color lightgreen} wlan0
+${color lightgreen}  Up   : $color${upspeed wlan0}
+${color lightgreen}  Down : $color${downspeed wlan0}
+
+${color lightgreen}-- Fan speed --
+${color lightgreen} Fan1(RPM) : $color${hwmon fan 1}
+
+${color lightgreen}-- System temp --
+${color lightgreen} CPU Core1 : $color${hwmon 1 temp 2} C
+${color lightgreen} CPU Core2 : $color${hwmon 1 temp 3} C 
+
+${color lightgreen} Temp1     : $color${hwmon temp 1} C 
+${color lightgreen} Temp2     : $color${hwmon temp 2} C
+${color lightgreen} Temp3     : $color${hwmon temp 3} C
+${color lightgreen} Temp4     : $color${hwmon temp 4} C
+${color lightgreen} Temp5     : $color${hwmon temp 5} C
+${color lightgreen} Temp6     : $color${hwmon temp 6} C
+${color lightgreen} Temp7     : $color${hwmon temp 7} C
