@@ -90,11 +90,11 @@ fi
 #alias l='ls -CF'
 
 ###########################################
-alias PROG=/mnt/prog/
-alias PY=/mnt/prog/Python/
-alias TEX=/mnt/prog/Tex/
+alias PR='cd /mnt/prog/'
+alias PY='cd /mnt/prog/Python/'
+alias TEX='cd /mnt/prog/Tex/'
 alias lmk='latexmk'
-#alias bu='python /home/bin/backup.py'
+# alias bu='python /home/bin/backup.py'
 alias raspi='ssh 192.168.11.11 -l pi -p 55522'
 alias hamachi='ssh 25.68.146.177 -l pi -p 55522'
 alias tmux='tmux -2'

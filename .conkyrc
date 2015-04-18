@@ -1,30 +1,52 @@
-alignment top_right
-background yes
+# Conky, a system monitor, based on torsmo
+#
+# Any original torsmo code is licensed under the BSD license
+#
+# All code written since the fork of torsmo is licensed under the GPL
+#
+# Please see COPYING for details
+#
+# Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+# Copyright (c) 2005-2010 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+# All rights reserved.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+alignment top_left
+background no
 border_width 1
 cpu_avg_samples 2
 default_color white
 default_outline_color white
 default_shade_color white
-double_buffer yes
-draw_borders yes
-draw_graph_borders no
+draw_borders no
+draw_graph_borders yes
 draw_outline no
 draw_shades no
 use_xft yes
-xftfont TakaoGothic:style=Regular:size=10
-gap_x 10
-gap_y 35
+xftfont DejaVu Sans Mono:size=12
+gap_x 5
+gap_y 60
 minimum_size 5 5
+net_avg_samples 2
 no_buffers yes
 out_to_console no
 out_to_stderr no
 extra_newline no
 own_window yes
 own_window_class Conky
-own_window_type override
-own_window_colour 555555
-own_window_transparent no
-own_window_hint sticky
+own_window_type desktop
 stippled_borders 0
 update_interval 1.0
 uppercase no
@@ -33,56 +55,23 @@ show_graph_scale no
 show_graph_range no
 
 TEXT
-${color lightgreen}Kernel: $color$kernel
-${color lightgreen}Uptime: $color$uptime
-
-${color lightgreen}-- CPU --
-${color lightgreen} CPU Freq: $color${freq}MHz
-${color lightgreen} Core 1  : $color${cpu cpu1}%
-${color lightgreen} Core 2  : $color${cpu cpu2}%
-
-${color lightgreen}-- RAM --
-${color lightgreen}Ram_max   : $color$memmax
-${color lightgreen}Ram_use   : $color$mem
-${color lightgreen}Ram_free  : $color$memeasyfree
-
-${color lightgreen}Swap_max  : $color$swapmax
-${color lightgreen}Swap_use  : $color$swap
-${color lightgreen}Swap_free : $color$swapfree
-
-${color lightgreen}-- Processes --
-${color lightgreen} Total   : $color$processes
-${color lightgreen} Run     : $color$running_processes
-${color lightgreen} Threads : $color$running_threads
-
-${color lightgreen}-- Filesystems --
-${color lightgreen} /     $color${fs_used /}/${fs_size /}
-${color lightgreen} /home $color${fs_used /home}/${fs_size /home}
-
-${color lightgreen}-- Disk Read/Write --
-${color lightgreen} Read  : $color${diskio_read /dev/sda}
-${color lightgreen} Write : $color${diskio_write /dev/sda}
-
-${color lightgreen}-- Networking --
-${color lightgreen} eh0
-${color lightgreen}  Up   : $color${upspeed eth0}
-${color lightgreen}  Down : $color${downspeed eth0}
-
-${color lightgreen} wlan0
-${color lightgreen}  Up   : $color${upspeed wlan0}
-${color lightgreen}  Down : $color${downspeed wlan0}
-
-${color lightgreen}-- Fan speed --
-${color lightgreen} Fan1(RPM) : $color${hwmon fan 1}
-
-${color lightgreen}-- System temp --
-${color lightgreen} CPU Core1 : $color${hwmon 1 temp 2} C
-${color lightgreen} CPU Core2 : $color${hwmon 1 temp 3} C 
-
-${color lightgreen} Temp1     : $color${hwmon temp 1} C 
-${color lightgreen} Temp2     : $color${hwmon temp 2} C
-${color lightgreen} Temp3     : $color${hwmon temp 3} C
-${color lightgreen} Temp4     : $color${hwmon temp 4} C
-${color lightgreen} Temp5     : $color${hwmon temp 5} C
-${color lightgreen} Temp6     : $color${hwmon temp 6} C
-${color lightgreen} Temp7     : $color${hwmon temp 7} C
+${scroll 16 $nodename - $sysname $kernel on $machine | }
+$hr
+${color grey}Uptime:$color $uptime
+${color grey}Frequency (in MHz):$color $freq
+${color grey}Frequency (in GHz):$color $freq_g
+${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+$hr
+${color grey}File systems:
+ / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+${color grey}Networking:
+Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
+$hr
+${color grey}Name              PID   CPU%   MEM%
+${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
