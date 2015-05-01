@@ -93,8 +93,8 @@ fi
 alias PR='cd /mnt/prog/'
 alias PY='cd /mnt/prog/Python/'
 alias TEX='cd /mnt/prog/Tex/'
+alias HDD1='cd /mnt/hdd1/'
 alias lmk='latexmk'
-# alias bu='python /home/bin/backup.py'
 alias raspi='ssh 192.168.11.11 -l pi -p 55522'
 alias hamachi='ssh 25.68.146.177 -l pi -p 55522'
 alias tmux='tmux -2'
@@ -104,6 +104,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias sudo='sudo -E '
 alias dropbox='/home/ryosuke/bin/Dropbox-Uploader/dropbox_uploader.sh'
+alias mnthdd1='sudo sshfs -o allow_other -p 55522 pi@192.168.11.11:/mnt/hdd1 /mnt/hdd1'
 export PATH=$PATH:/sbin:/home/ryosuke/bin
 ###########################################
 
