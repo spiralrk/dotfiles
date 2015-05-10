@@ -90,6 +90,7 @@ fi
 #alias l='ls -CF'
 
 ###########################################
+# Alias
 alias PR='cd /mnt/prog/'
 alias PY='cd /mnt/prog/Python/'
 alias TEX='cd /mnt/prog/Tex/'
@@ -104,8 +105,18 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias sudo='sudo -E '
 alias dropbox='/home/ryosuke/bin/Dropbox-Uploader/dropbox_uploader.sh'
-alias mnthdd1='sudo sshfs -o allow_other -p 55522 pi@192.168.11.11:/mnt/hdd1 /mnt/hdd1'
+alias mnthdd1='sudo sshfs pi@192.168.11.11:/mnt/hdd1 /mnt/hdd1 -p 55522 -o IdentityFile=/home/ryosuke/.ssh/id_rsa-raspi -o allow_other'
 export PATH=$PATH:/sbin:/home/ryosuke/bin
+
+# Setup ssh-agent
+if [ -f ~/.ssh-agent ]; then
+       . ~/.ssh-agent
+   fi
+if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+       ssh-agent > ~/.ssh-agent
+       . ~/.ssh-agent
+   fi
+ssh-add -l >& /dev/null || ssh-add 
 ###########################################
 
 # Alias definitions.
