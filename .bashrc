@@ -104,19 +104,22 @@ alias crontab='crontab -i'
 alias rm='rm -i'
 alias cp='cp -i'
 alias sudo='sudo -E '
+alias mntuec='sudo mount -t davfs -o uid=1000,gid=1000 https://uecdisk.cc.uec.ac.jp/remote.php/webdav/ /mnt/uecdisk/'
 alias dropbox='/home/ryosuke/bin/Dropbox-Uploader/dropbox_uploader.sh'
 alias mnthdd1='sudo sshfs pi@192.168.11.11:/mnt/hdd1 /mnt/hdd1 -p 55522 -o IdentityFile=/home/ryosuke/.ssh/id_rsa-raspi -o allow_other'
 export PATH=$PATH:/sbin:/home/ryosuke/bin
 
 # Setup ssh-agent
 if [ -f ~/.ssh-agent ]; then
-       . ~/.ssh-agent
-   fi
-if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+       . ~/.ssh-agent > /dev/null
+fi
+if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
        ssh-agent > ~/.ssh-agent
-       . ~/.ssh-agent
-   fi
-ssh-add -l >& /dev/null || ssh-add 
+       . ~/.ssh-agent > /dev/null
+fi
+if ! ssh-add -l | grep id_rsa-raspi > /dev/null ; then
+	ssh-add /home/ryosuke/.ssh/id_rsa-raspi
+fi
 ###########################################
 
 # Alias definitions.
