@@ -110,16 +110,16 @@ alias mnthdd1='sudo sshfs pi@192.168.11.11:/mnt/hdd1 /mnt/hdd1 -p 55522 -o Ident
 export PATH=$PATH:/sbin:/home/ryosuke/bin
 
 # Setup ssh-agent
-if [ -f ~/.ssh-agent ]; then
-       . ~/.ssh-agent > /dev/null
-fi
-if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
-       ssh-agent > ~/.ssh-agent
-       . ~/.ssh-agent > /dev/null
-fi
-if ! ssh-add -l | grep id_rsa-raspi > /dev/null ; then
-	ssh-add /home/ryosuke/.ssh/id_rsa-raspi
-fi
+#if [ -f ~/.ssh-agent ]; then
+#       . ~/.ssh-agent > /dev/null
+#fi
+#if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
+#       ssh-agent > ~/.ssh-agent
+#       . ~/.ssh-agent > /dev/null
+#fi
+#if ! ssh-add -l | grep id_rsa-raspi > /dev/null ; then
+#	ssh-add /home/ryosuke/.ssh/id_rsa-raspi
+#fi
 ###########################################
 
 # Alias definitions.
