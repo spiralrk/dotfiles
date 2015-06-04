@@ -106,7 +106,7 @@ alias cp='cp -i'
 alias sudo='sudo -E '
 alias mntuec='sudo mount -t davfs -o uid=1000,gid=1000 https://uecdisk.cc.uec.ac.jp/remote.php/webdav/ /mnt/uecdisk/'
 alias dropbox='/home/ryosuke/bin/Dropbox-Uploader/dropbox_uploader.sh'
-alias mnthdd1='sudo sshfs pi@192.168.11.11:/mnt/hdd1 /mnt/hdd1 -p 55522 -o IdentityFile=/home/ryosuke/.ssh/id_rsa-raspi -o allow_other'
+alias mnthdd1='sudo sshfs pi@192.168.11.11:/mnt/hdd1 /mnt/hdd1 -p 55522 -o allow_other'
 alias subl='sublime'
 export PATH=$PATH:/sbin:/home/ryosuke/bin
 
